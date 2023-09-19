@@ -851,7 +851,7 @@ EOF
 }
 
 function download_tgbot_script {
-  curl -fsSL https://raw.githubusercontent.com/aleskxyz/reality-ezpz/master/tgbot.py -o "${path[tgbot_script]}"
+  curl -fsSL https://raw.githubusercontent.com/USTOIR/reality-ezpz-adsallowed/master/tgbot.py -o "${path[tgbot_script]}"
 }
 
 function generate_selfsigned_certificate {
@@ -1004,8 +1004,7 @@ function generate_engine_config {
       },
       {
         "geosite": [
-          $([[ ${config[safenet]} == ON ]] && echo '"category-porn",' || true)
-          "category-ads-all"
+          $([[ ${config[safenet]} == ON ]] && echo '"category-porn"' || true)
         ],
         "outbound": "block"
       },
@@ -1194,7 +1193,6 @@ EOF
         "outboundTag": "block",
         "domain": [
           $([[ ${config[safenet]} == ON ]] && echo '"geosite:category-porn",' || true)
-          "geosite:category-ads-all",
           "domain:pushnotificationws.com",
           "domain:sunlight-leds.com",
           "domain:icecyber.org"
